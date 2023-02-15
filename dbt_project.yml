@@ -52,7 +52,7 @@ seeds:
           Q3: TIME(3)
       races:
         +column_types:
-          time: TIME(2)
+          --time: TIME(2)
           --fp1_date: DATE
           --fp1_time: TIME(2)
           --fp2_date: DATE
