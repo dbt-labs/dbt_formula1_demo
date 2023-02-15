@@ -38,6 +38,7 @@ models:
       materialized: view
 
 seeds:
+  kaggle_F1_data:
     +schema: raw
     pit_stops:
       +column_types:
