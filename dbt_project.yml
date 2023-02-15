@@ -44,7 +44,7 @@ seeds:
       pit_stops:
         +column_types:
           time: TIME(2)
-          duration: NUMBER(38,3)
+          --duration: NUMBER(38,3)
       qualifying:
         +column_types:
           Q1: TIME(3)
@@ -53,16 +53,16 @@ seeds:
       races:
         +column_types:
           time: TIME(2)
-          fp1_date: DATE
-          fp1_time: TIME(2)
-          fp2_date: DATE
-          fp2_time: TIME(2)
-          fp3_date: DATE
-          fp3_time: TIME(2)
-          quali_date: DATE
-          quali_time: TIME(2)
-          sprint_date: DATE
-          sprint_time: TIME(2)
+          --fp1_date: DATE
+          --fp1_time: TIME(2)
+          --fp2_date: DATE
+          --fp2_time: TIME(2)
+          --fp3_date: DATE
+          --fp3_time: TIME(2)
+          --quali_date: DATE
+          --quali_time: TIME(2)
+          --sprint_date: DATE
+          --sprint_time: TIME(2)
       results:
         +column_types:
           fastestlaptime: TIME(3)
