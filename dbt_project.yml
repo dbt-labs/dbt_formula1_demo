@@ -38,7 +38,6 @@ models:
       materialized: view
 
 seeds:
-  Formula1:
     +schema: raw
     pit_stops:
       +column_types:
