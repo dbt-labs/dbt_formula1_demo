@@ -38,7 +38,7 @@ models:
       materialized: view
 
 seeds:
-  kaggle_F1_data:
+  formula_one:
     +schema: raw
     pit_stops:
       +column_types:
