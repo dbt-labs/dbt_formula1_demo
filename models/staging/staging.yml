@@ -1,0 +1,131 @@
+version: 2
+
+exposures:
+
+  - name: Formula1
+    label: F1
+    type: analysis
+    maturity: high
+    url: https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020
+    description: >
+      This exposure is to document the source of the data.
+    owner:
+      name: Ian Cooper
+      email: ian.cooper@dbtlabs.com
+
+models:
+    - name: stg_circuits
+      description: "Staging dimensional data for F1 circuits"
+      columns:
+          - name: circuit_id
+            description: "The primary key for this table, each circuit is distinct"
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_constructor_results
+      description: "Fact data related to constructor (ie brand) results. This is at a race level but race info isn't in this model, just the race_id."
+      columns:
+          - name: constructor_results_id
+            description: "The primary key for this table, result has its own id."
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_constructor_standings
+      description: "Fact data related to constructor (ie brand) results. This is at a race level but race info isn't in this model, just the race_id."
+      columns:
+          - name: constructor_standings_id
+            description: "The primary key for this table, result has its own id."
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_constructors
+      description: "Dimensional data for the constructors (teams)."
+      columns:
+          - name: constructor_id
+            description: "The primary key for this table, each team has its own id."
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_driver_standings
+      description: "Fact data for driver standings by race."
+      columns:
+          - name: driver_standings_id
+            description: "The primary key for this table."
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_drivers
+      description: "Dimensional model stage for driver attributes."
+      columns:
+          - name: driver_id
+            description: "The primary key for this table."
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_lap_times
+      description: "Fact data around every lap."
+      columns:
+          - name: lap_times_id
+            description: "The primary key for this table."
+            tests:
+                - unique
+                - not_null
+    - name: stg_qualifying
+      description: "Fact data around qualifying times."
+      columns:
+          - name: qualify_id
+            description: "The primary key for this table."
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_races
+      description: "Fact data around qualifying times."
+      columns:
+          - name: race_id
+            description: "The primary key for this table."
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_results
+      description: "Fact data around qualifying times."
+      columns:
+          - name: result_id
+            description: "The primary key for this table."
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_seasons
+      description: "Season information"
+      columns:
+          - name: season_year
+            description: "The primary key for this table."
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_sprint_results
+      description: "Fact data around qualifying times."
+      columns:
+          - name: result_id
+            description: "The primary key for this table."
+            tests:
+                - unique
+                - not_null
+                
+    - name: stg_status
+      description: "Status codes mapping."
+      columns:
+          - name: status_id
+            description: "The primary key for this table."
+            tests:
+                - unique
+                - not_null
