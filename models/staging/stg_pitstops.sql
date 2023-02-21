@@ -5,7 +5,7 @@ WITH pitstops AS (
         driverid                                AS driver_id,
         stop                                    AS stop,
         lap                                     AS lap,
-        TIME("TIME")                            AS pitstop_time,
+        "TIME"                                  AS pitstop_time,
         duration                                AS pitstop_duration_text,
         {{ convert_laptime('duration') }}       AS pitstop_duration,
         milliseconds                            AS milliseconds
