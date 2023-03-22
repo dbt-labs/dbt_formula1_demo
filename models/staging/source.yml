@@ -1,0 +1,86 @@
+version: 2
+
+sources:
+  - name: kaggle_f1
+    database: ICOOPER_ANALYTICS
+    schema: RAW
+    tables:
+      - name: races
+        description: "Information about each Formula 1 race."
+        columns:
+          - name: raceid
+            description: "Unique identifier for each race."
+            tests:
+              - unique:
+                  severity: error
+              - not_null:
+                  severity: error
+          - name: year
+            description: "The year in which the race took place."
+          - name: round
+            description: "The round number of the race within the season."
+          - name: circuitid
+            description: "The identifier of the circuit where the race was held."
+          - name: name
+            description: "The official name of the race."
+          - name: date
+            description: "The date of the race."
+          - name: time
+            description: "The starting time of the race."
+          - name: url
+            description: "The URL of the race's Wikipedia page."
+
+      - name: results
+        description: "Results data for each driver in each race."
+        columns:
+          - name: resultid
+            description: "Unique identifier for each race result."
+            tests:
+              - unique:
+                  severity: error
+              - not_null:
+                  severity: error
+          - name: raceid
+            description: "The identifier of the race."
+          - name: driverid
+            description: "The identifier of the driver."
+          - name: constructorid
+            description: "The identifier of the constructor/team."
+          - name: number
+            description: "The car number of the driver."
+          - name: grid
+            description: "The starting grid position of the driver."
+          - name: position
+            description: "The finishing position of the driver."
+          - name: positionorder
+            description: "The finishing position order of the driver."
+          - name: points
+            description: "The points earned by the driver in the race."
+          - name: laps
+            description: "The number of laps completed by the driver."
+          - name: time
+            description: "The total race time for the driver."
+          - name: milliseconds
+            description: "The total race time for the driver in milliseconds."
+          - name: fastestlap
+            description: "The lap number of the driver's fastest lap."
+          - name: rank
+            description: "The rank of the driver's fastest lap time among all drivers."
+          - name: fastestlaptime
+            description: "The driver's fastest lap time."
+          - name: fastestlapspeed
+            description: "The driver's average speed during their fastest lap."
+          - name: statusdd
+            description: "The identifier of the driver's finishing status (e.g., finished, retired)."
+      - name: drivers
+      - name: constructors
+      - name: lap_times
+      - name: pit_stops
+      - name: qualifying
+      - name: seasons
+      - name: status
+      - name: constructor_results
+      - name: sprint_results
+      - name: constructor_standings
+      - name: driver_standings
+      - name: circuits

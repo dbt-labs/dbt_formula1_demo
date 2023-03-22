@@ -36,6 +36,10 @@ models:
     # Applies to all files under models/example/
     example:
       materialized: view
+    stage:
+      materialized: view
+    core:
+      materialized: table
 
 seeds:
   Formula1:
