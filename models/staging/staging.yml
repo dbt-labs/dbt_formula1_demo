@@ -76,10 +76,20 @@ models:
             tests:
                 - unique
                 - not_null
+
+    - name: stg_pitstops
+      description: "Fact data around pitstop times."
+      columns:
+          - name: pitstop_id
+            description: "The primary key for this table."
+            tests:
+                - unique
+                - not_null         
+
     - name: stg_qualifying
       description: "Fact data around qualifying times."
       columns:
-          - name: qualify_id
+          - name: qualifying_id
             description: "The primary key for this table."
             tests:
                 - unique
