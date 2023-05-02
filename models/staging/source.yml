@@ -6,81 +6,140 @@ sources:
     schema: RAW
     tables:
       - name: races
-        description: "Information about each Formula 1 race."
+        description: "{{doc('races_def')}}"
         columns:
           - name: raceid
-            description: "Unique identifier for each race."
+            description: "{{doc('raceid_def')}}"
             tests:
               - unique:
                   severity: error
               - not_null:
                   severity: error
           - name: year
-            description: "The year in which the race took place."
+            description: "{{doc('year_def')}}"
           - name: round
-            description: "The round number of the race within the season."
+            description: "{{doc('round_def')}}"
           - name: circuitid
-            description: "The identifier of the circuit where the race was held."
+            description: "{{doc('circuitid_def')}}"
           - name: name
-            description: "The official name of the race."
+            description: "{{doc('race_name_def')}}"
           - name: date
-            description: "The date of the race."
+            description: "{{doc('date_def')}}"
           - name: time
-            description: "The starting time of the race."
+            description: "{{doc('start_time_def')}}"
           - name: url
-            description: "The URL of the race's Wikipedia page."
+            description: "{{doc('url_def')}}"
 
       - name: results
-        description: "Results data for each driver in each race."
+        description: "{{doc('results_def')}}"
         columns:
           - name: resultid
-            description: "Unique identifier for each race result."
+            description: "{{doc('resultid_def')}}"
             tests:
               - unique:
                   severity: error
               - not_null:
                   severity: error
           - name: raceid
-            description: "The identifier of the race."
+            description: "{{doc('raceid_def')}}"
           - name: driverid
-            description: "The identifier of the driver."
+            description: "{{doc('driverid_def')}}"
           - name: constructorid
-            description: "The identifier of the constructor/team."
+            description: "{{doc('constructorid_def')}}"
           - name: number
-            description: "The car number of the driver."
+            description: "{{doc('number_def')}}"
           - name: grid
-            description: "The starting grid position of the driver."
+            description: "{{doc('grid_def')}}"
           - name: position
-            description: "The finishing position of the driver."
+            description: "{{doc('position_def')}}"
           - name: positionorder
-            description: "The finishing position order of the driver."
+            description: "{{doc('positionorder_def')}}"
           - name: points
-            description: "The points earned by the driver in the race."
+            description: "{{doc('points_def')}}"
           - name: laps
-            description: "The number of laps completed by the driver."
+            description: "{{doc('laps_def')}}"
           - name: time
-            description: "The total race time for the driver."
+            description: "{{doc('lap_time_def')}}"
           - name: milliseconds
-            description: "The total race time for the driver in milliseconds."
+            description: "{{doc('lap_time_milliseconds_def')}}"
           - name: fastestlap
-            description: "The lap number of the driver's fastest lap."
+            description: "{{doc('fastestlap_def')}}"
           - name: rank
-            description: "The rank of the driver's fastest lap time among all drivers."
+            description: "{{doc('rank_def')}}"
           - name: fastestlaptime
-            description: "The driver's fastest lap time."
+            description: "{{doc('fastestlaptime_def')}}"
           - name: fastestlapspeed
-            description: "The driver's average speed during their fastest lap."
+            description: "{{doc('fastestlapspeed_def')}}"
           - name: statusdd
-            description: "The identifier of the driver's finishing status (e.g., finished, retired)."
+            description: "{{doc('statusid_def')}}"
+
       - name: drivers
+        description: "{{doc('drivers_def')}}"
+        columns:
+          - name: driverrefnum
+            description: "{{ doc('driver_ref_num_def') }}"
+          - name: code
+            description: "{{ doc('driver_code_def') }}"
+          - name: forename
+            description: "{{ doc('driver_forename_def') }}"
+          - name: surname
+            description: "{{ doc('driver_surname_def') }}"
+          - name: dob
+            description: "{{ doc('driver_dob_def') }}"
+          - name: nationality
+            description: "{{ doc('driver_nationality_def') }}"
+          - name: url
+            description: "{{ doc('driver_url_def') }}"
+
+
       - name: constructors
+        description: "{{doc('constructors_def')}}"
+        columns:
+          - name: constructorref
+            description: "{{ doc('constructor_ref_def') }}"
+          - name: name
+            description: "{{ doc('contructor_name_def') }}"
+          - name: nationality
+            description: "{{ doc('constructor_nationality_def') }}"
+          - name: url
+            description: "{{ doc('constructor_url_def') }}"
+
       - name: lap_times
+        description: "{{doc('lap_times_def')}}"
+        columns:
+          - name: lap
+            description: "{{ doc('lap_def') }}"
+          - name: position
+            description: "{{ doc('position_def') }}"
+          - name: time
+            description: "{{ doc('lap_time_def') }}"
+          - name: milliseconds
+            description: "{{ doc('lap_time_milliseconds_def') }}"
+
+
       - name: pit_stops
+        description: "{{doc('pit_stops_def')}}"
+
       - name: qualifying
+        description: "{{doc('qualifying_def')}}"
+
       - name: seasons
+        description: "{{doc('seasons_def')}}"
+
       - name: status
+        description: "{{doc('status_def')}}"
+
       - name: constructor_results
+        description: "{{doc('constructor_results_def')}}"
+
       - name: sprint_results
+        description: "{{doc('sprint_results_def')}}"
+
       - name: constructor_standings
+        description: "{{doc('constructor_standings_def')}}"
+
       - name: driver_standings
+        description: "{{doc('driver_standings_def')}}"
+
       - name: circuits
+        description: "{{doc('circuits_def')}}"

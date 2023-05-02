@@ -1,7 +1,7 @@
 {{ config(
     tags=["race", "laptimes"],
     materialized = "incremental",
-    unique_key = "ping_instance_metric_id"
+    unique_key = "fct_result_id"
 ) }}
 
 WITH results AS (
